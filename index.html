@@ -73,6 +73,13 @@
       box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
     }
 
+    .error {
+      color: red;
+      font-size: 13px;
+      margin-top: 5px;
+      display: none;
+    }
+
     .submit-btn {
       width: 100%;
       padding: 15px;
@@ -108,59 +115,14 @@
       font-weight: 600;
       display: none;
     }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1 class="main-heading">Welcome to LALAS</h1>
 
-    <form id="nameForm">
-      <div class="form-group">
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" required />
-      </div>
+    .loading {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #007bff;
+      display: none;
+    }
 
-      <div class="form-group">
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" required />
-      </div>
-
-      <button type="submit" class="submit-btn">Submit</button>
-    </form>
-
-    <div class="success-message" id="successMsg">✅ Data submitted! Check the console.</div>
-
-    <div class="console-note">
-      <strong>Note:</strong> Open DevTools (Cmd + Option + J) and check the Console tab to see the submitted data.
-    </div>
-  </div>
-
-  <script>
-    document.getElementById('nameForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const firstName = document.getElementById('firstName').value.trim();
-      const lastName = document.getElementById('lastName').value.trim();
-
-      const formData = {
-        firstName: firstName,
-        lastName: lastName,
-        timestamp: new Date().toLocaleString()
-      };
-
-      console.log('=== Form Submission Data ===');
-      console.log('First Name:', firstName);
-      console.log('Last Name:', lastName);
-      console.log('Full Data Object:', formData);
-      console.log('============================');
-
-      // Show success message instead of alert
-      const msg = document.getElementById('successMsg');
-      msg.style.display = 'block';
-
-      // Optionally reset form
-      document.getElementById('nameForm').reset();
-    });
-  </script>
-</body>
-</html>
+    @media (max-width: 480px) {
+      .main-heading {
+        font-size:
